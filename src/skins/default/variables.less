@@ -1,0 +1,25 @@
+@prefix: medit-;
+@main-color : #6190e8;
+@base-font-size: 16px;
+@btn-color : #ffffff;
+@scrollbarsWidth: 6px;
+@loader-color : #999999;
+@loader-dot-size : unit(6px /@base-font-size, rem);
+@loader-size : unit(28px / @base-font-size, rem);
+@zIndex: 10;
+
+.toRem(@prop; @px) {
+    @{prop}: unit(@px / @base-font-size, rem);
+}
+
+.toRem(@prop; @px; @rest...) when(length(@rest)=1) {
+    @{prop}: unit(@px / @base-font-size, rem) unit(extract(@rest, 1) / @base-font-size, rem);
+}
+
+.toRem(@prop; @px; @rest...) when(length(@rest)=2) {
+    @{prop}: unit(@px / @base-font-size, rem) unit(extract(@rest, 1) / @base-font-size, rem) unit(extract(@rest, 2) / @base-font-size, rem);
+}
+
+.toRem(@prop; @px; @rest...) when(length(@rest)=3) {
+    @{prop}: unit(@px / @base-font-size, rem) unit(extract(@rest, 1) / @base-font-size, rem) unit(extract(@rest, 2) / @base-font-size, rem) unit(extract(@rest, 3) / @base-font-size, rem);
+}

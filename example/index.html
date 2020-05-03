@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= htmlWebpackPlugin.tags.headTags %>
+    <!-- <style src="/dist/smartedit.css"></style> -->
+    <title>Medit.it浪子技术博客</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" style="padding:10px 10px 0 10px;"></div>
+    <!-- <script src="/dist/smartedit.js"></script> -->
+
+    <%= htmlWebpackPlugin.tags.bodyTags %>
+    <script>
+        window.onload = function () {
+            const medit = new Medit({
+                image: {
+                    upload(file) {
+                        return { file, type: file.type, name: 'it浪子技术博客', url: 'https://www.itlangzi.com/default/assets/images/avatars/avatar.jpg' }
+                    }
+                },
+
+                file: {
+                    upload(files) {
+                        if (!Array.isArray(files)) {
+                            files = [files]
+                        }
+                        return files.map(file => ({ file, type: file.type, name: 'it浪子技术博客', url: 'https://www.itlangzi.com/default/assets/images/avatars/avatar.jpg' }))
+                    }
+                },
+                editorOptions: {
+                    placeholder: '写点什么...',
+                }
+            })
+            medit.render('#app')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+
+*>.@{prefix}icon:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.@{prefix}icon {
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+    text-align: center;
+    text-transform: none;
+    font-size: inherit;
+    // transition: all 300ms ease-out;
+    cursor: pointer;
+
+    svg {
+        display: inline-block;
+        margin-bottom: -2px;
+    }
+
+    /* & > * {
+		line-height: 1;
+	} */
+    &-heading-bold {
+        font-weight: 700;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: rgba(0, 0, 0, .05);
+        outline: 0;
+        text-decoration: none;
+    }
+}

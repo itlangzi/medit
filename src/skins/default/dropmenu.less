@@ -1,0 +1,77 @@
+.@{prefix}navs > li .@{prefix}dropmenu.@{prefix}dropmenu-active {
+	.toRem(top, 35px);
+	opacity: 1;
+	visibility: visible;
+}
+
+.@{prefix}dropdown {
+	position: relative;
+	display: inline-block;
+
+	.@{prefix}dropmenu {
+		.toRem(font-size, 14px);
+		.toRem(min-width, 140px);
+		position: absolute;
+		.toRem(left, -5px);
+		.toRem(top, 80px);
+		z-index: 12;
+		margin: 0;
+		padding: 4px 0;
+		text-align: left;
+		list-style-type: none;
+		background-color: #fff;
+		background-clip: padding-box;
+		border-radius: 2px;
+		outline: none;
+		/* box-shadow: 0 3px 6px -4px rgba(0, 0, 0, .12), 0 6px 16px 0 rgba(0, 0, 0, .08),
+            0 9px 28px 8px rgba(0, 0, 0, .05); */
+		box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+		opacity: 0;
+		visibility: hidden;
+		transition: all .3s ease;
+		border-bottom: 2px solid #ddd;
+		border-top: 1px solid #ddd;
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+
+			.toRem(border-width, 0, 10px, 10px);
+			border-style: solid;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			position: absolute;
+			.toRem(left, 9px);
+		}
+
+		&::before {
+			.toRem(top, -10px);
+			border-bottom-color: #ddd;
+		}
+
+		&::after {
+			.toRem(top, -9px);
+			border-bottom-color: #fff;
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			& > li {
+				.toRem(padding, 4px, 5px);
+				cursor: pointer;
+				color: rgba(0, 0, 0, .65);
+
+				&:hover {
+					background-color: #f5f5f5;
+					color: rgba(0, 0, 0, .85);
+				}
+			}
+		}
+	}
+}

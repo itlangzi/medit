@@ -1,0 +1,198 @@
+@import (less) "~codemirror/lib/codemirror.css";
+// @import (less) "~codemirror/theme/darcula.css";
+@import (less) "~codemirror/addon/search/matchesonscrollbar.css";
+@import (less) "~codemirror/addon/dialog/dialog.css";
+@import (less) "~codemirror/addon/display/fullscreen.css";
+@import (less) "~codemirror/addon/hint/show-hint.css";
+@import (less) "~codemirror/addon/fold/foldgutter.css";
+@import (less) "./simplescrollbars.less";
+
+/* .CodeMirror {
+    height: auto;
+}
+.CodeMirror-scroll {
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+} */
+/**
+    Name: IntelliJ IDEA darcula theme
+    From IntelliJ IDEA by JetBrains
+ */
+/* .CodeMirror-scroll {
+    height: 100%;
+    overflow-y: auto!important;
+    overflow-x: hidden!important;
+    padding-bottom: 0;
+} */
+.CodeMirror {
+	z-index: 10;
+	// border-right: 1px solid #ddd;
+	// font-size: 14px;
+	font-family: "YaHei Consolas Hybrid", Consolas, "微软雅黑", "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS",
+		Helvetica, "Monaco", courier, monospace;
+	line-height: 1.6;
+	// margin-top: 35px;
+}
+/* .CodeMirror pre {
+	font-size: 14px;
+	padding: 0 12px;
+} */
+/* .CodeMirror-linenumbers {
+	padding: 0 5px;
+} */
+.CodeMirror-selected {
+	background: #70b7ff;
+}
+.CodeMirror-focused .CodeMirror-selected {
+	background: #70b7ff;
+}
+// .CodeMirror,
+.CodeMirror-scroll {
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden !important;
+	// padding-bottom: 0px;
+	box-sizing: content-box;
+}
+/* 
+.styled-background {
+	background-color: #ff7;
+}
+.CodeMirror-focused .cm-matchhighlight {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
+	background-position: bottom;
+	background-repeat: repeat-x;
+}
+.CodeMirror-empty.CodeMirror-focused {
+	outline: none;
+}
+.CodeMirror pre.CodeMirror-placeholder {
+	color: #999;
+}
+
+.cm-s-darcula {
+	font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono',
+		'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+}
+//  .cm-s-darcula.CodeMirror { background: #2B2B2B; color: #A9B7C6; }
+
+.cm-s-darcula span.cm-meta {
+	color: #bbb529;
+}
+.cm-s-darcula span.cm-number {
+	color: #6897bb;
+}
+.cm-s-darcula span.cm-keyword {
+	color: #cc7832;
+	line-height: 1em;
+	font-weight: bold;
+}
+.cm-s-darcula span.cm-def {
+	color: #a9b7c6;
+	font-style: italic;
+}
+.cm-s-darcula span.cm-variable {
+	color: #a9b7c6;
+}
+.cm-s-darcula span.cm-variable-2 {
+	color: #a9b7c6;
+}
+.cm-s-darcula span.cm-variable-3 {
+	color: #9876aa;
+}
+.cm-s-darcula span.cm-type {
+	color: #aabbcc;
+	font-weight: bold;
+}
+.cm-s-darcula span.cm-property {
+	color: #ffc66d;
+}
+.cm-s-darcula span.cm-operator {
+	color: #a9b7c6;
+}
+.cm-s-darcula span.cm-string {
+	color: #6a8759;
+}
+.cm-s-darcula span.cm-string-2 {
+	color: #6a8759;
+}
+.cm-s-darcula span.cm-comment {
+	color: #61a151;
+	font-style: italic;
+}
+.cm-s-darcula span.cm-link {
+	color: #cc7832;
+}
+.cm-s-darcula span.cm-atom {
+	color: #cc7832;
+}
+.cm-s-darcula span.cm-error {
+	color: #bc3f3c;
+}
+.cm-s-darcula span.cm-tag {
+	color: #629755;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+}
+.cm-s-darcula span.cm-attribute {
+	color: #6897bb;
+}
+.cm-s-darcula span.cm-qualifier {
+	color: #6a8759;
+}
+.cm-s-darcula span.cm-bracket {
+	color: #a9b7c6;
+}
+.cm-s-darcula span.cm-builtin {
+	color: #ff9e59;
+}
+.cm-s-darcula span.cm-special {
+	color: #ff9e59;
+}
+.cm-s-darcula span.cm-matchhighlight {
+	color: #ffffff;
+	background-color: rgba(50, 89, 48, .7);
+	font-weight: normal;
+}
+.cm-s-darcula span.cm-searching {
+	color: #ffffff;
+	background-color: rgba(61, 115, 59, .7);
+	font-weight: normal;
+}
+
+.cm-s-darcula .CodeMirror-cursor {
+	border-left: 1px solid #a9b7c6;
+}
+//  .cm-s-darcula .CodeMirror-activeline-background { background: #323232; }
+.cm-s-darcula .CodeMirror-gutters {
+	// background: #313335; border-right: 1px solid #313335;
+	min-height: 100%;
+}
+.cm-s-darcula .CodeMirror-guttermarker {
+	color: #ffee80;
+}
+.cm-s-darcula .CodeMirror-guttermarker-subtle {
+	color: #d0d0d0;
+}
+.cm-s-darcula .CodeMirrir-linenumber {
+	color: #606366;
+}
+.cm-s-darcula .CodeMirror-matchingbracket {
+	background-color: #3b514d;
+	color: #ffef28 !important;
+	font-weight: bold;
+}
+
+//  .cm-s-darcula div.CodeMirror-selected { background: #214283; }
+
+.CodeMirror-hints.darcula {
+	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+	color: #9c9e9e;
+	background-color: #3b3e3f !important;
+}
+
+.CodeMirror-hints.darcula .CodeMirror-hint-active {
+	background-color: #494d4e !important;
+	color: #9c9e9e !important;
+} */
